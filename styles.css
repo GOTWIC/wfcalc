@@ -21,6 +21,7 @@
   center: 0;
   background-color: #131313;
   min-width: 125px;
+  min-height: 40px;
   /*box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.2);*/
   z-index: 1;
 }
@@ -34,7 +35,11 @@
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #002927;}
+.dropdown-content a:hover {
+  background-color: #002927;
+  /*border: 1px solid #05b0a7;*/
+  border-radius: 25px;
+}
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {display: block;}
