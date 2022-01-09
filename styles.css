@@ -61,7 +61,9 @@
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {background-color: #002927;}
 
-.slottype:hover {background-color: #002927;}
+.optiontype:hover {background-color: #002927;}
+
+ 
 
 
 

@@ -14,7 +14,7 @@ function toggle(slot){
     }
 
     else{
-      document.getElementById(slot).style.display="inline";
+      document.getElementById(slot).style.display="inline-block";
       singleActive(slots, slot);
       document.getElementById("slotbtn").innerHTML = "Primary";
       return primary = 0, secondary = 1, melee = 1;
@@ -29,7 +29,7 @@ function toggle(slot){
     }
 
     else{
-      document.getElementById(slot).style.display="inline";
+      document.getElementById(slot).style.display="inline-block";
       singleActive(slots, slot);
       document.getElementById("slotbtn").innerHTML = "Secondary";
       return secondary = 0, primary = 1, melee = 1;
@@ -44,7 +44,7 @@ function toggle(slot){
     }
 
     else{
-      document.getElementById(slot).style.display="inline";
+      document.getElementById(slot).style.display="inline-block";
       singleActive(slots, slot);
       document.getElementById("slotbtn").innerHTML = "Melee";
       return melee = 0, primary = 1, secondary = 1;
