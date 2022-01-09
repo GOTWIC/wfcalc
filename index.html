@@ -4,10 +4,33 @@
 <head>
 
 <TITLE>WFCALC</TITLE>
-<link rel="shortcut icon" type="image/png" href="favicon_io/favicon-16x16.png">
+<link rel="shortcut icon" type="image/ico" href="favicon_io/favicon.ico">
 <link rel="stylesheet" href="styles.css">
 <script src="functions.js"></script>
 
+<style>
+/* width */
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #05b0a7;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #002927;
+}
+</style>
 
 </head>
 
@@ -18,7 +41,7 @@
 
 <CENTER>
   <div class="dropdown">
-    <button id = "slotbtn" class="dropdown-btn" >Select Slot</button>
+    <button id = "slotBTN" class="dropdown-btn" >Select Slot</button>
     <div id = "dropdown-content" class="dropdown-content">
       <button class="optiontype" onclick="toggle('primary')">Primary</button>
       <button class="optiontype" onclick="toggle('secondary')">Secondary</button>
@@ -30,11 +53,11 @@
 
 <CENTER>
   <div class="dropdown" style="display:none" id="primary">
-    <button id = "slotbtn" class="dropdown-btn" >Select Slot</button>
+    <button id = "dropdownBTNprimary" class="dropdown-btn" >Select Slot</button>
     <div id = "dropdown-content" class="dropdown-content">
-      <button class="optiontype" onclick="">Quellor</button>
-      <button class="optiontype" onclick="">Trumna</button>
-      <button class="optiontype" onclick="">Kuva Bramma</button>
+      <button class="optiontype" onclick="loadModEditor('dropdownBTNprimary','quellor')">Quellor</button>
+      <button class="optiontype" onclick="loadModEditor('dropdownBTNprimary','trumna')">Trumna</button>
+      <button class="optiontype" onclick="loadModEditor('dropdownBTNprimary','kuva_bramma')">Kuva Bramma</button>
     </div>
   </div>
 </CENTER>
@@ -42,11 +65,11 @@
 
 <CENTER>
   <div class="dropdown" style="display:none" id="secondary">
-    <button id = "slotbtn" class="dropdown-btn" >Select Slot</button>
+    <button id = "dropdownBTNsecondary" class="dropdown-btn" >Select Slot</button>
     <div id = "dropdown-content" class="dropdown-content">
-      <button class="optiontype" onclick="">Epitaph</button>
-      <button class="optiontype" onclick="">Kuva Nukor</button>
-      <button class="optiontype" onclick="">Pandero</button>
+      <button class="optiontype" onclick="loadModEditor('dropdownBTNsecondary','epitaph')">Epitaph</button>
+      <button class="optiontype" onclick="loadModEditor('dropdownBTNsecondary','kuva_nukor')">Kuva Nukor</button>
+      <button class="optiontype" onclick="loadModEditor('dropdownBTNsecondary','pandero')">Pandero</button>
     </div>
   </div>
 </CENTER>
@@ -54,19 +77,32 @@
 
 <CENTER>
   <div class="dropdown" style="display:none" id="melee">
-    <button id = "slotbtn" class="dropdown-btn" >Select Slot</button>
+    <button id = "dropdownBTNmelee" class="dropdown-btn" >Select Slot</button>
     <div id = "dropdown-content" class="dropdown-content">
-      <button class="optiontype" onclick="">Boltace</button>
-      <button class="optiontype" onclick="">Nami Skyla</button>
-      <button class="optiontype" onclick="">Dual Ether</button>
+      <button class="optiontype" onclick="loadModEditor('dropdownBTNmelee','boltace')">Boltace</button>
+      <button class="optiontype" onclick="loadModEditor('dropdownBTNmelee','nami_skyla')">Nami Skyla</button>
+      <button class="optiontype" onclick="loadModEditor('dropdownBTNmelee','dual_ether')">Dual Ether</button>
     </div>
   </div>
 </CENTER>
 
+<div>
+  <div class="flex-container row1">
+    <div class="flex-child mod1"></div>
+    <div class="flex-child mod2"></div>
+    <div class="flex-child mod3"></div>
+    <div class="flex-child mod4"></div>
+  </div>
 
+  <div class="flex-container row2">
+    <div class="flex-child mod5"></div>
+    <div class="flex-child mod6"></div>
+    <div class="flex-child mod7"></div>
+    <div class="flex-child mod8"></div>
+  </div>
+</div>
 
-
-
+<div class="spacer"><div>
 
 
 
