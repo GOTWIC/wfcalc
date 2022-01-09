@@ -4,6 +4,7 @@
 <head>
 
 <TITLE>WFCALC</TITLE>
+<link rel="shortcut icon" type="image/png" href="favicon_io/favicon-16x16.png">
 <link rel="stylesheet" href="styles.css">
 <script src="functions.js"></script>
 
@@ -16,61 +17,51 @@
 <CENTER><h1 style="color:#05b0a7;">WARFRAME CALCULATOR</h1></CENTER>
 
 <CENTER>
-<div class="dropdown">
-  <button id = "slotbtn" class="dropbtn" >Select Slot</button>
-  <div class="dropdown-content">
-    <button class="optiontype" onclick="toggle('primary')">Primary</button>
-    <button class="optiontype" onclick="toggle('secondary')">Secondary</button>
-    <button class="optiontype" onclick="toggle('melee')">Melee</button>
+  <div class="dropdown">
+    <button id = "slotbtn" class="dropdown-btn" >Select Slot</button>
+    <div id = "dropdown-content" class="dropdown-content">
+      <button class="optiontype" onclick="toggle('primary')">Primary</button>
+      <button class="optiontype" onclick="toggle('secondary')">Secondary</button>
+      <button class="optiontype" onclick="toggle('melee')">Melee</button>
+    </div>
   </div>
-</div>
 </CENTER>
 
 
 <CENTER>
-<div class="dropdown" style="display:none" id="primary">
-  <button id = "slotbtn" class="dropbtn" >Select Slot</button>
-  <div class="dropdown-content">
-    <button class="optiontype" onclick="">Quellor</button>
-    <button class="optiontype" onclick="">Kuva Karak</button>
-    <button class="optiontype" onclick="">Kuva Bramma</button>
+  <div class="dropdown" style="display:none" id="primary">
+    <button id = "slotbtn" class="dropdown-btn" >Select Slot</button>
+    <div id = "dropdown-content" class="dropdown-content">
+      <button class="optiontype" onclick="">Quellor</button>
+      <button class="optiontype" onclick="">Trumna</button>
+      <button class="optiontype" onclick="">Kuva Bramma</button>
+    </div>
   </div>
-</div>
 </CENTER>
-
-<!--
-<CENTER>
-<div class="dropdown" style="display:none" id="primary">
-  <button id = "slotbtn" class="dropbtn">Select Weapon</button>
-  <div class="dropdown-content">
-    <button class="optiontype" onclick="">Quellor</button>
-    <button class="optiontype" onclick="">Kuva Karak</button>
-    <button class="optiontype" onclick="">Kuva Bramma</button>
-  </div>
-</div>
-</CENTER>
-
--->
-
 
 
 <CENTER>
-<div class="dropdown" style="display:none" id="secondary">
-  <button class="dropbtn">Select Weapon</button>
-  <div class="dropdown-content">
+  <div class="dropdown" style="display:none" id="secondary">
+    <button id = "slotbtn" class="dropdown-btn" >Select Slot</button>
+    <div id = "dropdown-content" class="dropdown-content">
+      <button class="optiontype" onclick="">Epitaph</button>
+      <button class="optiontype" onclick="">Kuva Nukor</button>
+      <button class="optiontype" onclick="">Pandero</button>
+    </div>
   </div>
-</div>
 </CENTER>
+
 
 <CENTER>
-<div class="dropdown" style="display:none" id="melee">
-  <button class="dropbtn">Select Weapon</button>
-  <div class="dropdown-content">
+  <div class="dropdown" style="display:none" id="melee">
+    <button id = "slotbtn" class="dropdown-btn" >Select Slot</button>
+    <div id = "dropdown-content" class="dropdown-content">
+      <button class="optiontype" onclick="">Boltace</button>
+      <button class="optiontype" onclick="">Nami Skyla</button>
+      <button class="optiontype" onclick="">Dual Ether</button>
+    </div>
   </div>
-</div>
 </CENTER>
-
-
 
 
 

@@ -4,7 +4,7 @@ const slots = ["primary", "secondary", "melee"];
 
 function toggle(slot){
 
-
+  document.getElementById("dropdown-content").style.display="none"; 
 
   if(slot == "primary"){
     if(primary == 0){
@@ -44,7 +44,7 @@ function toggle(slot){
     }
 
     else{
-      document.getElementById(slot).style.display="inline-block";
+      document.getElementById(slot).style.display="inline-block"  ;
       singleActive(slots, slot);
       document.getElementById("slotbtn").innerHTML = "Melee";
       return melee = 0, primary = 1, secondary = 1;
