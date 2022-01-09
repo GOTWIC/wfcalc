@@ -1,12 +1,14 @@
-<HTML>
+<!DOCTYPE html>
+<html>
 
-<HEAD>
+<head>
 
 <TITLE>WFCALC</TITLE>
 <link rel="stylesheet" href="styles.css">
 <script src="functions.js"></script>
 
-</HEAD>
+
+</head>
 
 <BODY BGCOLOR="131313">
 
@@ -15,19 +17,22 @@
 
 <CENTER>
 <div class="dropdown">
-  <button class="dropbtn">Select Slot</button>
+  <button id = "slotbtn" class="dropbtn" >Select Slot</button>
   <div class="dropdown-content">
-    <button class="slottype" onclick="toggle('primary')">Primary</button>
-    <button class="slottype" onclick="toggle('secondary')">Secondary</button>
-    <button class="slottype" onclick="toggle('melee')">Melee</button>
+    <button class="optiontype" onclick="toggle('primary')">Primary</button>
+    <button class="optiontype" onclick="toggle('secondary')">Secondary</button>
+    <button class="optiontype" onclick="toggle('melee')">Melee</button>
   </div>
 </div>
 </CENTER>
 
 <CENTER>
 <div class="dropdown" style="display:none" id="primary">
-  <button class="dropbtn">Primary</button>
+  <button class="dropbtn">Select Weapon</button>
   <div class="dropdown-content">
+    <button class="optiontype" onclick="">Quellor</button>
+    <button class="optiontype" onclick="">Kuva Karak</button>
+    <button class="optiontype" onclick="">Kuva Bramma</button>
   </div>
 </div>
 </CENTER>
@@ -35,7 +40,7 @@
 
 <CENTER>
 <div class="dropdown" style="display:none" id="secondary">
-  <button class="dropbtn">Secondary</button>
+  <button class="dropbtn">Select Weapon</button>
   <div class="dropdown-content">
   </div>
 </div>
@@ -43,7 +48,7 @@
 
 <CENTER>
 <div class="dropdown" style="display:none" id="melee">
-  <button class="dropbtn">Melee</button>
+  <button class="dropbtn">Select Weapon</button>
   <div class="dropdown-content">
   </div>
 </div>
@@ -52,4 +57,27 @@
 
 
 
-</HTML>
+
+
+
+
+
+
+<div class="buttons-container">
+        <a href="#" class="btn test-completed"></a>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>

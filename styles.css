@@ -6,17 +6,19 @@
   font-size: 18px;
   border: 2px solid #05b0a7;
   border-radius: 25px;
-  min-width: 125px;
+  min-width: 160px;
+  margin-top: 25px;
+  margin-bottom: 10px;
 }
 
-.slottype {
+.optiontype {
   background-color: #131313;
   color: #05b0a7;
   padding: 16px;
   font-size: 14px;
   border: 1px solid #131313;
   border-radius: 25px;
-  min-width: 125px;
+  min-width: 160px;
   min-height: 40px;
 }
 
@@ -32,7 +34,7 @@
   position: absolute;
   center: 0;
   background-color: #131313;
-  min-width: 125px;
+  min-width: 160px;
   min-height: 40px;
   z-index: 1;
 }
@@ -43,6 +45,7 @@
   padding: 12px 16px;
   text-decoration: none;
   display: block;
+  margin-bottom: 10px;
 }
 
 /* Change color of dropdown links on hover */
@@ -59,3 +62,67 @@
 .dropdown:hover .dropbtn {background-color: #002927;}
 
 .slottype:hover {background-color: #002927;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+.buttons-container h2 {
+    font-family: "Roboto", sans-serif;
+    margin-bottom: 0;
+}
+
+.btn {
+    display: inline-block;
+    background: #e63946;
+    text-decoration: none;
+    width: 160px;
+    height: 42px;
+    margin: 24px 0;
+    border-radius: 10px;
+    overflow: hidden;
+
+    box-shadow: inset 0 4px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.btn.test-completed::after,
+.btn.test-completed::before {
+    content: "Test";
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    font-family: "Roboto", sans-serif;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 2.5;
+
+    transition: all 400ms;
+    top: 0;
+}
+
+.btn.btn.test-completed:hover::after {
+    top: -36px;
+}
+
+.btn.test-completed::before {
+    content: "Completed";
+    top: 36px;
+}
+
+.btn.btn.test-completed:hover::before {
+    top: 0;
+}
+
+*/
