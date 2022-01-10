@@ -1,3 +1,11 @@
+
+
+
+.BTNmaster {
+    display: inline-block;
+}
+
+
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
   position: relative;
@@ -33,10 +41,17 @@
   background-color: #131313;
   min-width: 160px;
   min-height: 40px;
+  max-height: 300px;
   z-index: 1;
+  overflow: auto;
+  border-left: 3px solid #05b0a7;
+  border-right: 3px solid #05b0a7;
+  border-bottom: 3px solid #05b0a7;
+  border-radius: 25px;
 }
 
-.optiontype {
+
+.optiontype, .primaryTypes, .secondaryTypes, .meleeTypes  {
   background-color: #131313;
   color: #05b0a7;
   padding: 16px;
@@ -47,7 +62,8 @@
   min-height: 40px;
 }
 
-.optiontype:hover {background-color: #002927;}
+
+.optiontype:hover, .primaryTypes:hover, .secondaryTypes:hover, .meleeTypes:hover {background-color: #002927;}
 
 
 .flex-container {
@@ -58,12 +74,12 @@
 .flex-child {
   flex: 1;
   background-color: #131313;
-  color: #05b0a7;
+  color: #7e04cf;
   padding: 16px;
-  border: 2px solid #05b0a7;
+  border: 2px solid #7e04cf;
   border-radius: 25px;
   min-width: 150px;
-  min-height: 250px;
+  min-height: 220px;
   margin-top: 25px;
   margin-bottom: 10px;
   display: inline-block;
@@ -74,11 +90,7 @@
   margin-left: 70px;
 }
 
-
-
-
-
-
+.flex-child:hover {background-color: #2b0147;}
 
 
 .spacer {
@@ -86,64 +98,3 @@
   padding: 50px;
   margin: 20px;
 }
-
-
-
-
-
-
-
-
-
-
-/*
-
-.buttons-container h2 {
-    font-family: "Roboto", sans-serif;
-    margin-bottom: 0;
-}
-
-.btn {
-    display: inline-block;
-    background: #e63946;
-    text-decoration: none;
-    width: 160px;
-    height: 42px;
-    margin: 24px 0;
-    border-radius: 10px;
-    overflow: hidden;
-
-    box-shadow: inset 0 4px 15px rgba(0, 0, 0, 0.2);
-    position: relative;
-}
-
-.btn.test-completed::after,
-.btn.test-completed::before {
-    content: "Test";
-    position: absolute;
-    text-align: center;
-    width: 100%;
-    font-family: "Roboto", sans-serif;
-    color: #fff;
-    font-weight: bold;
-    text-transform: uppercase;
-    line-height: 2.5;
-
-    transition: all 400ms;
-    top: 0;
-}
-
-.btn.btn.test-completed:hover::after {
-    top: -36px;
-}
-
-.btn.test-completed::before {
-    content: "Completed";
-    top: 36px;
-}
-
-.btn.btn.test-completed:hover::before {
-    top: 0;
-}
-
-*/

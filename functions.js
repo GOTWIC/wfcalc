@@ -2,59 +2,73 @@ var primary, secondary, melee;
 
 const slots = ["primary", "secondary", "melee"];
 
-function toggle(slot){
+function loadWeaponTypes(slot){
 
-  if(slot == "primary"){
+  if(slot == 'primary'){
+
     if(primary == 0){
-      document.getElementById(slot).style.display="none";
-      changeButtonName("slotBTN", "Select Slot");
+      changeButtonName("slotBTN", toTitleCase("Select Slot"));
       return primary = 1;
     }
 
     else{
-      document.getElementById(slot).style.display="inline-block";
-      singleActive(slots, slot);
-      changeButtonName("slotBTN", "Primary");
+      changeButtonName("slotBTN", toTitleCase(slot));
+      resetTypeDropdownContents();
+      var validElements = document.getElementsByClassName("primaryTypes");
+      for(var i = 0; i < validElements.length; i++) {
+        validElements[i].style.display="block";
+      }
       return primary = 0, secondary = 1, melee = 1;
     }
   }
 
-  if(slot == "secondary"){
+
+  if(slot == 'secondary'){
+
     if(secondary == 0){
-      document.getElementById(slot).style.display="none";
-      changeButtonName("slotBTN", "Select Slot");
+      changeButtonName("slotBTN", toTitleCase("Select Slot"));
       return secondary = 1;
     }
 
     else{
-      document.getElementById(slot).style.display="inline-block";
-      singleActive(slots, slot);
-      changeButtonName("slotBTN", "Secondary");
-      return secondary = 0, primary = 1, melee = 1;
+      changeButtonName("slotBTN", toTitleCase(slot));
+      resetTypeDropdownContents()
+      var validElements = document.getElementsByClassName("secondaryTypes");
+      for(var i = 0; i < validElements.length; i++) {
+        validElements[i].style.display="block";
+      }
+      return primary = 1, secondary = 0, melee = 1;
     }
   }
 
-  if(slot == "melee"){
+
+  if(slot == 'melee'){
+
     if(melee == 0){
-      document.getElementById(slot).style.display="none";
-      changeButtonName("slotBTN", "Select Slot");
+      changeButtonName("slotBTN", toTitleCase("Select Slot"));
       return melee = 1;
     }
 
     else{
-      document.getElementById(slot).style.display="inline-block"  ;
-      singleActive(slots, slot);
-      changeButtonName("slotBTN", "Melee");
-      return melee = 0, primary = 1, secondary = 1;
+      changeButtonName("slotBTN", toTitleCase(slot));
+      resetTypeDropdownContents()
+      var validElements = document.getElementsByClassName("meleeTypes");
+      for(var i = 0; i < validElements.length; i++) {
+        validElements[i].style.display="block";
+      }
+      return primary = 1, secondary = 1, melee = 0;
     }
   }
+
+
+
 }
 
 
 
 
 
-function loadModEditor(slotBTN, weapon){
+function loadWeaponNames(slotBTN, weapon){
   changeButtonName(slotBTN, toTitleCase(weapon.replace(/_/g, " ")));
 }
 
@@ -79,4 +93,20 @@ function toTitleCase(str) {
       return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
     }
   );
+}
+
+function resetTypeDropdownContents(){
+  var invalidElements1 = document.getElementsByClassName("primaryTypes");
+  var invalidElements2 = document.getElementsByClassName("secondaryTypes");
+  var invalidElements3 = document.getElementsByClassName("meleeTypes");
+
+  for(var i = 0; i < invalidElements1.length; i++) {
+    invalidElements1[i].style.display="none";
+  }
+  for(var i = 0; i < invalidElements2.length; i++) {
+    invalidElements2[i].style.display="none";
+  }
+  for(var i = 0; i < invalidElements3.length; i++) {
+    invalidElements3[i].style.display="none";
+  }
 }
