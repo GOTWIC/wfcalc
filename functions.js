@@ -4,6 +4,8 @@ const slots = ["primary", "secondary", "melee"];
 
 function loadWeaponTypes(slot){
 
+  changeButtonName("typeBTN", "Select Type");
+
   if(slot == 'primary'){
 
     if(primary == 0){
@@ -59,9 +61,14 @@ function loadWeaponTypes(slot){
   }
 }
 
-function loadWeaponNames(typeBTN, weapon){
+function loadWeaponNames(weaponType){
   //changeButtonName(typeBTN, toTitleCase(weapon.replace(/_/g, " ")));
-  changeButtonName("typeBTN", toTitleCase(weapon.replace(/_/g, " ")));
+  changeButtonName("typeBTN", toTitleCase(weaponType.replace(/_/g, " ")));
+}
+
+function loadWeaponStats(weapon){
+  //changeButtonName(typeBTN, toTitleCase(weapon.replace(/_/g, " ")));
+  changeButtonName("nameBTN", toTitleCase(weapon.replace(/_/g, " ")));
 }
 
 
