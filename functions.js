@@ -22,7 +22,6 @@ function loadWeaponTypes(slot){
     }
   }
 
-
   if(slot == 'secondary'){
 
     if(secondary == 0){
@@ -41,7 +40,6 @@ function loadWeaponTypes(slot){
     }
   }
 
-
   if(slot == 'melee'){
 
     if(melee == 0){
@@ -59,20 +57,12 @@ function loadWeaponTypes(slot){
       return primary = 1, secondary = 1, melee = 0;
     }
   }
-
-
-
 }
 
-
-
-
-
-function loadWeaponNames(slotBTN, weapon){
-  changeButtonName(slotBTN, toTitleCase(weapon.replace(/_/g, " ")));
+function loadWeaponNames(typeBTN, weapon){
+  //changeButtonName(typeBTN, toTitleCase(weapon.replace(/_/g, " ")));
+  changeButtonName("typeBTN", toTitleCase(weapon.replace(/_/g, " ")));
 }
-
-
 
 
 function singleActive(array, activeItem){
