@@ -1,5 +1,6 @@
 var primary, secondary, melee;
 var rifle;
+var mod1 = false, mod2, mod3, mod4;
 
 const slots = ["primary", "secondary", "melee"];
 
@@ -131,18 +132,20 @@ function resetTypeDropdownContents(){
 
 
 
+function drag(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+}
 
 
 function allowDrop(ev) {
   ev.preventDefault();
 }
 
-function drag(ev) {
-  ev.dataTransfer.setData("text", ev.target.id);
-}
-
-function drop(ev) {
-  ev.preventDefault();
-  var data = ev.dataTransfer.getData("text");
-  ev.target.appendChild(document.getElementById(data));
+function drop(ev, mod) {
+  if(document.getElementById(mod).childNodes.length == 0){
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+    //return 0;
+  }
 }
