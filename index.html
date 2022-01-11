@@ -49,68 +49,82 @@
   <div class="dropdown">
     <button id = "typeBTN" class="dropdown-btn" >Select Type</button>
     <div class="dropdown-content">
-      <button class="primaryTypes" style="display:none" onclick="loadWeaponNames('rifles')">Rifles</button>
-      <button class="primaryTypes" style="display:none" onclick="loadWeaponNames('shotguns')">Shotguns</button>
-      <button class="primaryTypes" style="display:none" onclick="loadWeaponNames('bows')">Bows</button>
-      <button class="primaryTypes" style="display:none" onclick="loadWeaponNames('snipers')">Snipers</button>
-      <button class="primaryTypes" style="display:none" onclick="loadWeaponNames('launchers')">Launchers</button>
-      <button class="primaryTypes" style="display:none" onclick="loadWeaponNames('arm_cannons')">Arm Cannons</button>
-      <button class="primaryTypes" style="display:none" onclick="loadWeaponNames('spearguns')">Spearguns</button>
-      <button class="primaryTypes" style="display:none" onclick="loadWeaponNames('other')">Other</button>
+      <button class="primaryType" style="display:none" onclick="loadWeaponNames('rifle')">Rifles</button>
+      <button class="primaryType" style="display:none" onclick="loadWeaponNames('p_shotgun')">Shotguns</button>
+      <button class="primaryType" style="display:none" onclick="loadWeaponNames('bow')">Bows</button>
+      <button class="primaryType" style="display:none" onclick="loadWeaponNames('sniper')">Snipers</button>
+      <button class="primaryType" style="display:none" onclick="loadWeaponNames('launcher')">Launchers</button>
+      <button class="primaryType" style="display:none" onclick="loadWeaponNames('arm_cannon')">Arm Cannons</button>
+      <button class="primaryType" style="display:none" onclick="loadWeaponNames('speargun')">Spearguns</button>
+      <button class="primaryType" style="display:none" onclick="loadWeaponNames('p_other')">Other</button>
 
-      <button class="secondaryTypes" style="display:none" onclick="loadWeaponNames('pistols')">Pistols</button>
-      <button class="secondaryTypes" style="display:none" onclick="loadWeaponNames('shotguns')">Shotguns</button>
-      <button class="secondaryTypes" style="display:none" onclick="loadWeaponNames('thrown')">Thrown</button>
-      <button class="secondaryTypes" style="display:none" onclick="loadWeaponNames('other')">Other</button>
+      <button class="secondaryType" style="display:none" onclick="loadWeaponNames('pistol')">Pistols</button>
+      <button class="secondaryType" style="display:none" onclick="loadWeaponNames('s_shotgun')">Shotguns</button>
+      <button class="secondaryType" style="display:none" onclick="loadWeaponNames('thrown')">Thrown</button>
+      <button class="secondaryType" style="display:none" onclick="loadWeaponNames('s_other')">Other</button>
 
-      <button class="meleeTypes" style="display:none" onclick="loadWeaponNames('claws')">Claws</button>
-      <button class="meleeTypes" style="display:none" onclick="loadWeaponNames('daggers')">Daggers</button>
-      <button class="meleeTypes" style="display:none" onclick="loadWeaponNames('fists')">Fists</button>
-      <button class="meleeTypes" style="display:none" onclick="loadWeaponNames('glaives')">Glaives</button>
-      <button class="meleeTypes" style="display:none" onclick="loadWeaponNames('gunblades')">Gunblades</button>
-      <button class="meleeTypes" style="display:none" onclick="loadWeaponNames('hammers')">Hammers</button>
-      <button class="meleeTypes" style="display:none" onclick="loadWeaponNames('heav_blades')">Heavy Blades</button>
-      <button class="meleeTypes" style="display:none" onclick="loadWeaponNames('machetes')">Machetes</button>
-      <button class="meleeTypes" style="display:none" onclick="loadWeaponNames('nikanas')">Nikanas</button>
-      <button class="meleeTypes" style="display:none" onclick="loadWeaponNames('nunchakus')">Nunchakus</button>
-      <button class="meleeTypes" style="display:none" onclick="loadWeaponNames('polearms')">Polearms</button>
-      <button class="meleeTypes" style="display:none" onclick="loadWeaponNames('rapiers')">Rapiers</button>
-      <button class="meleeTypes" style="display:none" onclick="loadWeaponNames('scythes')">Scythes</button>
-      <button class="meleeTypes" style="display:none" onclick="loadWeaponNames('staves')">Staves</button>
-      <button class="meleeTypes" style="display:none" onclick="loadWeaponNames('sparring')">Sparring</button>
-      <button class="meleeTypes" style="display:none" onclick="loadWeaponNames('swords')">Swords</button>
-      <button class="meleeTypes" style="display:none" onclick="loadWeaponNames('sword_and_shields')">Sword and Shields</button>
-      <button class="meleeTypes" style="display:none" onclick="loadWeaponNames('tonfas')">Tonfas</button>
-      <button class="meleeTypes" style="display:none" onclick="loadWeaponNames('warfans')">Warfans</button>
-      <button class="meleeTypes" style="display:none" onclick="loadWeaponNames('whips')">Whips</button>
+      <button class="meleeType" style="display:none" onclick="loadWeaponNames('claw')">Claws</button>
+      <button class="meleeType" style="display:none" onclick="loadWeaponNames('dagger')">Daggers</button>
+      <button class="meleeType" style="display:none" onclick="loadWeaponNames('fist')">Fists</button>
+      <button class="meleeType" style="display:none" onclick="loadWeaponNames('glaive')">Glaives</button>
+      <button class="meleeType" style="display:none" onclick="loadWeaponNames('gunblade')">Gunblades</button>
+      <button class="meleeType" style="display:none" onclick="loadWeaponNames('hammer')">Hammers</button>
+      <button class="meleeType" style="display:none" onclick="loadWeaponNames('heavy_blade')">Heavy Blades</button>
+      <button class="meleeType" style="display:none" onclick="loadWeaponNames('machete')">Machetes</button>
+      <button class="meleeType" style="display:none" onclick="loadWeaponNames('nikana')">Nikanas</button>
+      <button class="meleeType" style="display:none" onclick="loadWeaponNames('nunchaku')">Nunchakus</button>
+      <button class="meleeType" style="display:none" onclick="loadWeaponNames('polearm')">Polearms</button>
+      <button class="meleeType" style="display:none" onclick="loadWeaponNames('rapier')">Rapiers</button>
+      <button class="meleeType" style="display:none" onclick="loadWeaponNames('scythe')">Scythes</button>
+      <button class="meleeType" style="display:none" onclick="loadWeaponNames('stave')">Staves</button>
+      <button class="meleeType" style="display:none" onclick="loadWeaponNames('sparring')">Sparring</button>
+      <button class="meleeType" style="display:none" onclick="loadWeaponNames('sword')">Swords</button>
+      <button class="meleeType" style="display:none" onclick="loadWeaponNames('sword_and_shield')">Sword and Shields</button>
+      <button class="meleeType" style="display:none" onclick="loadWeaponNames('tonfa')">Tonfas</button>
+      <button class="meleeType" style="display:none" onclick="loadWeaponNames('warfan')">Warfans</button>
+      <button class="meleeType" style="display:none" onclick="loadWeaponNames('whip')">Whips</button>
     </div>
   </div>
 
   <div class="dropdown">
     <button id = "nameBTN" class="dropdown-btn" >Select Weapon</button>
     <div class="dropdown-content">
-      <button class="primary_rifle" style="display:none" onclick="loadWeaponStats('quellor')">Quellor</button>
+      <button class="rifle" style="display:none" onclick="loadWeaponStats('quellor')">Quellor</button>
     </div>
   </div>
 
 </div>
 </CENTER>
 
-<div>
-  <div class="flex-container row1">
-    <button class="flex-child mod1">Select Mod</button>
-    <button class="flex-child mod2">Select Mod</button>
-    <button class="flex-child mod3">Select Mod</button>
-    <button class="flex-child mod4">Select Mod</button>
-  </div>
+<table class="mod-slots">
+  <tr>
+    <th><div class="mod-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div></th>
+    <th><div class="mod-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div></th>
+    <th><div class="mod-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div></th>
+    <th><div class="mod-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div></th>
+  </tr>
+  <tr>
+    <th><div class="mod-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div></th>
+    <th><div class="mod-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div></th>
+    <th><div class="mod-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div></th>
+    <th><div class="mod-slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div></th>
+  </tr>
+</table>
 
-  <div class="flex-container row1">
-    <button class="flex-child mod5">Select Mod</button>
-    <button class="flex-child mod6">Select Mod</button>
-    <button class="flex-child mod7">Select Mod</button>
-    <button class="flex-child mod8">Select Mod</button>
-  </div>
+
+<div>
+  <img id="galvanized_chamber" src="mods/GalvanizedChamber.png" draggable="true" ondragstart="drag(event)" width="145" height="188">
+  <img id="galvanized_aptitude" src="mods/GalvanizedAptitude.png" draggable="true" ondragstart="drag(event)" width="145" height="188">
+  <img id="primed_cryo_rounds" src="mods/PrimedCryoRounds.png" draggable="true" ondragstart="drag(event)" width="125" height="185">
+  <img id="vital_sense" src="mods/VitalSense.png" draggable="true" ondragstart="drag(event)" width="125" height="185">
+  <img id="critical_delay" src="mods/CriticalDelay.png" draggable="true" ondragstart="drag(event)" width="125" height="185">
+  <img id="bladed_rounds" src="mods/BladedRounds.png" draggable="true" ondragstart="drag(event)" width="125" height="185">
+  <img id="internal_bleeding" src="mods/InternalBleeding.png" draggable="true" ondragstart="drag(event)" width="125" height="185">
+  <img id="vile_acceleration" src="mods/VileAcceleration.png" draggable="true" ondragstart="drag(event)" width="125" height="185">
+  <img id="primed_bane_of_grineer" src="mods/PrimedBaneOfGrineer.png" draggable="true" ondragstart="drag(event)" width="125" height="185">
 </div>
+
+
 
 <div class="spacer"><div>
 

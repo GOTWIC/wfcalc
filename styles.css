@@ -51,7 +51,7 @@
 }
 
 
-.optiontype, .primaryTypes, .secondaryTypes, .meleeTypes  {
+.optiontype, .primaryType, .secondaryType, .meleeType, .rifle  {
   background-color: #131313;
   color: #05b0a7;
   padding: 16px;
@@ -62,35 +62,27 @@
   min-height: 40px;
 }
 
-
-.optiontype:hover, .primaryTypes:hover, .secondaryTypes:hover, .meleeTypes:hover {background-color: #002927;}
-
-
-.flex-container {
-    display: block;
-    z-index: 2;
+.mod-slots {
+  margin-left: 70px;
+  margin-top: 50px;
 }
 
-.flex-child {
-  flex: 1;
-  background-color: #131313;
-  color: #7e04cf;
-  padding: 16px;
+
+.optiontype:hover, .primaryType:hover, .secondaryType:hover, .meleeType:hover {background-color: #002927;}
+
+
+.mod-slot {
+  width: 145px;
+  height: 188px;
+  margin: 10px;
   border: 2px solid #7e04cf;
   border-radius: 25px;
-  min-width: 150px;
-  min-height: 220px;
-  margin-top: 25px;
-  margin-bottom: 10px;
-  display: inline-block;
-  margin-right: 20px;
+  color: #7e04cf;
+  background-color: #131313;
 }
 
-.flex-child:nth-child(4n+1) {
-  margin-left: 70px;
-}
 
-.flex-child:hover {background-color: #2b0147;}
+.mod-slot:hover {background-color: #2b0147;}
 
 
 .spacer {
