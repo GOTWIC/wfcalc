@@ -45,7 +45,7 @@
 }
 
 
-.optiontype, .primaryType, .secondaryType, .meleeType, .rifle  {
+.optiontype, .primaryType, .secondaryType, .meleeType, .rifles  {
   background-color: #131313;
   color: #05b0a7;
   padding: 16px;
@@ -58,12 +58,6 @@
 
 .optiontype:hover, .primaryType:hover, .secondaryType:hover, .meleeType:hover {background-color: #002927;}
 
-
-
-.mod-slots {
-  margin-top: 0px;
-  vertical-align: bottom;
-}
 
 .mod-slot {
   width: 145px;
@@ -90,6 +84,7 @@
   color: #7e04cf;
   background-color: #131313;
   overflow-y: scroll;
+  margin-right: 50px;
 }
 
 .modding-area {

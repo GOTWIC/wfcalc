@@ -72,22 +72,14 @@ function loadWeaponNames(weaponType){
 
   changeButtonName("nameBTN", "Select Weapon");
 
-  if(weaponType == 'rifle'){
+  changeButtonName("typeBTN", weaponType.innerHTML);
 
-    if(rifle == 0){
-      changeButtonName("nameBTN", toTitleCase("Select Weapon"));
-      return rifle = 1;
-    }
+  // Implement later!!!
+  // resetTypeDropdownContents();
 
-    else{
-      changeButtonName("typeBTN", toTitleCase(weaponType.replace(/_/g, " ")));
-      //resetTypeDropdownContents();
-      var validElements = document.getElementsByClassName("rifle");
-      for(var i = 0; i < validElements.length; i++) {
-        validElements[i].style.display="block";
-      }
-      return rifle = 0;
-    }
+  var validElements = document.getElementsByClassName(weaponType.innerHTML.replace(/ /g, "_").toLowerCase());
+  for(var i = 0; i < validElements.length; i++) {
+    validElements[i].style.display="block";
   }
 }
 
