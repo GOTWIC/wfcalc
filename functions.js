@@ -1,6 +1,6 @@
 var primary, secondary, melee;
 var rifle;
-var mod1, mod2, mod3, mod4;
+var mod1, mod2, mod3, mod4, mod5, mod6, mod7, mod8;
 
 const slots = ["primary", "secondary", "melee"];
 
@@ -141,6 +141,8 @@ function allowDrop(ev) {
 function drop(ev, modSlotID) {
   var modSlot = document.getElementById(modSlotID);
 
+  var data = ev.dataTransfer.getData("text");
+
   if(modSlot.childNodes.length == 0){
     var data = ev.dataTransfer.getData("text");
     ev.target.appendChild(document.getElementById(data));
@@ -230,9 +232,37 @@ function removeMods(){
 }
 
 
-function removeMod(mod){
+function modActions(mod){
+  if(mod.parentElement.id == "mod-source"){
+    for(let i = 1; i < 9; i++) {
+      var modSlot = 'mod' + i.toString();
 
-  if(mod.parentElement.id != "mod-source"){
+      if(document.getElementById(modSlot).childNodes.length == 0){
+        document.getElementById(modSlot).appendChild(mod);
+        document.getElementById('test').innerHTML = modSlot;
+
+        break;
+      }
+    }
+  }
+
+  else if(mod.parentElement.id != "mod-source"){
     document.getElementById("mod-source").appendChild(mod);
   }
+}
+
+
+
+function openModTab(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
 }
