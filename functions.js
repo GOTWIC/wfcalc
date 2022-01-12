@@ -1,8 +1,13 @@
 var primary, secondary, melee;
 var rifle;
-var mod1 = false, mod2, mod3, mod4;
+var mod1, mod2, mod3, mod4;
 
 const slots = ["primary", "secondary", "melee"];
+
+
+window.addEventListener('contextmenu', function (e) {
+  e.preventDefault();
+}, false);
 
 function loadWeaponTypes(weaponSlot){
 
@@ -141,11 +146,101 @@ function allowDrop(ev) {
   ev.preventDefault();
 }
 
-function drop(ev, mod) {
-  if(document.getElementById(mod).childNodes.length == 0){
-    ev.preventDefault();
+function drop(ev, modSlotID) {
+  var modSlot = document.getElementById(modSlotID);
+
+  if(modSlot.childNodes.length == 0){
     var data = ev.dataTransfer.getData("text");
     ev.target.appendChild(document.getElementById(data));
-    //return 0;
+
+    switch(modSlotID) {
+      case "mod1":
+        mod1 = document.getElementById(data).id;
+        break;
+      case "mod2":
+        mod2 = document.getElementById(data).id;
+        break;
+      case "mod3":
+        mod3 = document.getElementById(data).id;
+        break;
+      case "mod4":
+        mod4 = document.getElementById(data).id;
+        break;
+      case "mod5":
+        mod5 = document.getElementById(data).id;
+        break;
+      case "mod6":
+        mod6 = document.getElementById(data).id;
+        break;
+      case "mod7":
+        mod7 = document.getElementById(data).id;
+        break;
+      case "mod8":
+        mod8 = document.getElementById(data).id;
+        break;
+    }
+  }
+
+
+  /*
+    if(modSlot.childNodes.length > 0){
+
+
+      var modID = modSlot.childNodes[0].id;
+      document.getElementById("mod-source").appendChild(document.getElementById(modID));
+
+
+      ev.preventDefault();
+
+      switch(modSlotID) {
+        case "mod1":
+          document.getElementById("mod-source").appendChild(document.getElementById(mod1));
+          insertMod(ev);
+          break;
+        case "mod2":
+          document.getElementById("mod-source").appendChild(document.getElementById(mod2));
+          break;
+        case "mod3":
+          document.getElementById("mod-source").appendChild(document.getElementById(mod3));
+          break;
+        case "mod4":
+          document.getElementById("mod-source").appendChild(document.getElementById(mod4));
+          break;
+        case "mod5":
+          document.getElementById("mod-source").appendChild(document.getElementById(mod5));
+          break;
+        case "mod6":
+          document.getElementById("mod-source").appendChild(document.getElementById(mod6));
+          break;
+        case "mod7":
+          document.getElementById("mod-source").appendChild(document.getElementById(mod7));
+          break;
+        case "mod8":
+          document.getElementById("mod-source").appendChild(document.getElementById(mod8));
+          break;
+      }
+
+    }
+  */
+
+}
+
+
+
+function removeMods(){
+  for(let i = 1; i < 9; i++) {
+    var mod = 'mod' + i.toString();
+    if(document.getElementById(mod).childNodes.length > 0){
+      var modID = document.getElementById(mod).childNodes[0].id;
+      document.getElementById("mod-source").appendChild(document.getElementById(modID));
+    }
+  }
+}
+
+
+function removeMod(mod){
+
+  if(mod.parentElement.id != "mod-source"){
+    document.getElementById("mod-source").appendChild(mod);
   }
 }

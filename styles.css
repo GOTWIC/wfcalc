@@ -5,18 +5,14 @@
     display: inline-block;
 }
 
-
-/* The container <div> - needed to position the dropdown content */
 .dropdown {
   position: relative;
   display: inline-block;
 }
 
-/* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {display: block;}
 
 
-/* Dropdown Button */
 .dropdown-btn {
   background-color: #131313;
   color: #05b0a7;
@@ -29,12 +25,10 @@
   margin-bottom: 10px;
 }
 
-/* Change the background color of the dropdown button when the dropdown content is shown */
 
 .dropdown-btn:hover {background-color: #002927;}
 
 
-/* Dropdown Content (Hidden by Default) */
 .dropdown-content {
   display: none;
   position: absolute;
@@ -47,7 +41,7 @@
   border-left: 3px solid #05b0a7;
   border-right: 3px solid #05b0a7;
   border-bottom: 3px solid #05b0a7;
-  border-radius: 25px;
+  border-radius: 10px;
 }
 
 
@@ -62,14 +56,14 @@
   min-height: 40px;
 }
 
-.mod-slots {
-  margin-left: 70px;
-  margin-top: 50px;
-}
-
-
 .optiontype:hover, .primaryType:hover, .secondaryType:hover, .meleeType:hover {background-color: #002927;}
 
+
+
+.mod-slots {
+  margin-top: 0px;
+  vertical-align: bottom;
+}
 
 .mod-slot {
   width: 145px;
@@ -83,6 +77,42 @@
 
 
 .mod-slot:hover {background-color: #2b0147;}
+
+
+.mod-source {
+  width: 600px;
+  height: 407px;
+  border: 2px solid #7e04cf;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 10px;
+  color: #7e04cf;
+  background-color: #131313;
+  overflow-y: scroll;
+}
+
+.modding-area {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+.removeBTN {
+  border: 2px solid #7e04cf;
+  border-radius: 25px;
+  color: #7e04cf;
+  background-color: #131313;
+  padding: 16px;
+  font-size: 18px;
+  min-width: 160px;
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+
+.removeBTN:hover {background-color: #2b0147;}
 
 
 .spacer {
