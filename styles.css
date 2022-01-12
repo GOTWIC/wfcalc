@@ -75,7 +75,7 @@
 
 .mod-source {
   width: 600px;
-  height: 407px;
+  height: 445px;
   border: 2px solid #7e04cf;
   border-top-left-radius: 25px;
   border-top-right-radius: 10px;
@@ -84,7 +84,6 @@
   color: #7e04cf;
   background-color: #131313;
   overflow-y: scroll;
-  margin-right: 50px;
 }
 
 .modding-area {

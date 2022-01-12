@@ -228,14 +228,26 @@ function removeMods(){
     var mod = 'mod' + i.toString();
     if(document.getElementById(mod).childNodes.length > 0){
       var modID = document.getElementById(mod).childNodes[0].id;
-      document.getElementById("mod-source").appendChild(document.getElementById(modID));
+      //document.getElementById("mod-source").appendChild(document.getElementById(modID));
+
+      if(modID.includes("prime")){
+        document.getElementById("primed-mod-source").appendChild(document.getElementById(modID));
+      }
+
+      else if(modID.includes("galvanized")){
+        document.getElementById("galvanzied-mod-source").appendChild(document.getElementById(modID));
+      }
+
+      else{
+        document.getElementById("normal-mod-source").appendChild(document.getElementById(modID));
+      }
     }
   }
 }
 
 
 function modActions(mod){
-  if(mod.parentElement.id == "mod-source"){
+  if(mod.parentElement.id == "normal-mod-source" || mod.parentElement.id == "primed-mod-source" || mod.parentElement.id == "galvanzied-mod-source"){
     for(let i = 1; i < 9; i++) {
       var modSlot = 'mod' + i.toString();
 
@@ -248,8 +260,19 @@ function modActions(mod){
     }
   }
 
-  else if(mod.parentElement.id != "mod-source"){
-    document.getElementById("mod-source").appendChild(mod);
+  else if(mod.parentElement.id != "normal-mod-source" || mod.parentElement.id != "primed-mod-source" || mod.parentElement.id != "galvanzied-mod-source"){
+    if(mod.id.includes("prime")){
+      document.getElementById("primed-mod-source").appendChild(mod);
+    }
+
+    else if(mod.id.includes("galvanized")){
+      document.getElementById("galvanzied-mod-source").appendChild(mod);
+    }
+
+    else{
+      document.getElementById("normal-mod-source").appendChild(mod);
+    }
+
   }
 }
 

@@ -100,16 +100,34 @@
 <table class="modding-area">
   <tr>
     <th>
-      <div class="mod-source" id="mod-source">
-        <img id="galvanized_chamber" src="mods/GalvanizedChamber.png" draggable="true" ondragstart="drag(event)" onclick="modActions(this)" width="145" height="188">
-        <img id="galvanized_aptitude" src="mods/GalvanizedAptitude.png" draggable="true" ondragstart="drag(event)" onclick="modActions(this)" width="145" height="188">
-        <img id="primed_cryo_rounds" src="mods/PrimedCryoRounds.png" draggable="true" ondragstart="drag(event)" onclick="modActions(this)" width="125" height="185">
-        <img id="vital_sense" src="mods/VitalSense.png" draggable="true" ondragstart="drag(event)" onclick="modActions(this)" width="125" height="185">
-        <img id="critical_delay" src="mods/CriticalDelay.png" draggable="true" ondragstart="drag(event)" onclick="modActions(this)" width="125" height="185">
-        <img id="bladed_rounds" src="mods/BladedRounds.png" draggable="true" ondragstart="drag(event)" onclick="modActions(this)" width="125" height="185">
-        <img id="internal_bleeding" src="mods/InternalBleeding.png" draggable="true" ondragstart="drag(event)" onclick="modActions(this)" width="125" height="185">
-        <img id="vile_acceleration" src="mods/VileAcceleration.png" draggable="true" ondragstart="drag(event)" onclick="modActions(this)" width="134" height="187">
-        <img id="primed_bane_of_grineer" src="mods/PrimedBaneOfGrineer.png" draggable="true" ondragstart="drag(event)"onclick="modActions(this)"  width="125" height="185">
+      <div class="tab">
+        <button class="tablinks" onclick="openModTab(event, 'normal_mods')">Normal mods</button>
+        <button class="tablinks" onclick="openModTab(event, 'primed_mods')">Primed Mods</button>
+        <button class="tablinks" onclick="openModTab(event, 'galvanized_mods')">Galvanized Mods</button>
+      </div>
+
+      <div id="normal_mods" class="tabcontent" style="display: block !important;">
+        <div class="mod-source" id="normal-mod-source">
+          <img id="vital_sense" src="mods/VitalSense.png" draggable="true" ondragstart="drag(event)" onclick="modActions(this)" width="125" height="185">
+          <img id="critical_delay" src="mods/CriticalDelay.png" draggable="true" ondragstart="drag(event)" onclick="modActions(this)" width="125" height="185">
+          <img id="bladed_rounds" src="mods/BladedRounds.png" draggable="true" ondragstart="drag(event)" onclick="modActions(this)" width="125" height="185">
+          <img id="internal_bleeding" src="mods/InternalBleeding.png" draggable="true" ondragstart="drag(event)" onclick="modActions(this)" width="125" height="185">
+          <img id="vile_acceleration" src="mods/VileAcceleration.png" draggable="true" ondragstart="drag(event)" onclick="modActions(this)" width="134" height="187">
+          <img id="primed_bane_of_grineer" src="mods/PrimedBaneOfGrineer.png" draggable="true" ondragstart="drag(event)"onclick="modActions(this)"  width="125" height="185">
+        </div>
+      </div>
+
+      <div id="primed_mods" class="tabcontent">
+        <div class="mod-source" id="primed-mod-source">
+          <img id="primed_cryo_rounds" src="mods/PrimedCryoRounds.png" draggable="true" ondragstart="drag(event)" onclick="modActions(this)" width="125" height="185">
+        </div>
+      </div>
+
+      <div id="galvanized_mods" class="tabcontent">
+        <div class="mod-source" id="galvanzied-mod-source">
+          <img id="galvanized_chamber" src="mods/GalvanizedChamber.png" draggable="true" ondragstart="drag(event)" onclick="modActions(this)" width="145" height="188">
+          <img id="galvanized_aptitude" src="mods/GalvanizedAptitude.png" draggable="true" ondragstart="drag(event)" onclick="modActions(this)" width="145" height="188">
+        </div>
       </div>
     </th>
     <th>
@@ -150,40 +168,6 @@
     </th>
   </tr>
 </table>
-
-
-
-<div class="tab">
-  <button class="tablinks" onclick="openModTab(event, 'normal_mods')">Normal mods</button>
-  <button class="tablinks" onclick="openModTab(event, 'primed_mods')">Primed Mods</button>
-  <button class="tablinks" onclick="openModTab(event, 'galvanized_mods')">Galvanized Mods</button>
-</div>
-
-<div id="normal_mods" class="tabcontent">
-  <div class="mod-source" id="normal-mod-source">
-    <img id="vital_sense" src="mods/VitalSense.png" draggable="true" ondragstart="drag(event)" onclick="modActions(this)" width="125" height="185">
-    <img id="critical_delay" src="mods/CriticalDelay.png" draggable="true" ondragstart="drag(event)" onclick="modActions(this)" width="125" height="185">
-    <img id="bladed_rounds" src="mods/BladedRounds.png" draggable="true" ondragstart="drag(event)" onclick="modActions(this)" width="125" height="185">
-    <img id="internal_bleeding" src="mods/InternalBleeding.png" draggable="true" ondragstart="drag(event)" onclick="modActions(this)" width="125" height="185">
-    <img id="vile_acceleration" src="mods/VileAcceleration.png" draggable="true" ondragstart="drag(event)" onclick="modActions(this)" width="134" height="187">
-    <img id="primed_bane_of_grineer" src="mods/PrimedBaneOfGrineer.png" draggable="true" ondragstart="drag(event)"onclick="modActions(this)"  width="125" height="185">
-  </div>
-</div>
-
-<div id="primed_mods" class="tabcontent">
-  <div class="mod-source" id="primed-mod-source">
-    <img id="primed_cryo_rounds" src="mods/PrimedCryoRounds.png" draggable="true" ondragstart="drag(event)" onclick="modActions(this)" width="125" height="185">
-  </div>
-</div>
-
-<div id="galvanized_mods" class="tabcontent">
-  <div class="mod-source" id="galvanzied-mod-source">
-    <img id="galvanized_chamber" src="mods/GalvanizedChamber.png" draggable="true" ondragstart="drag(event)" onclick="modActions(this)" width="145" height="188">
-    <img id="galvanized_aptitude" src="mods/GalvanizedAptitude.png" draggable="true" ondragstart="drag(event)" onclick="modActions(this)" width="145" height="188">
-  </div>
-</div>
-
-
 
 
 
