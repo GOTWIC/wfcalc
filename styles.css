@@ -113,7 +113,7 @@
 
 
 .tabcontent {
-  animation: fadeEffect 1s; /* Fading effect takes 1 second */
+  animation: fadeEffect 1s;
 }
 
 /* Go from zero to full opacity */
@@ -123,6 +123,9 @@
 }
 
 
+.tab {
+  margin-left: 25px;
+}
 
 
 
@@ -152,9 +155,6 @@
 /* Style the tab content */
 .tabcontent {
   display: none;
-  padding: 6px 12px;
-  border: 1px solid #ccc;
-  border-top: none;
 }
 
 

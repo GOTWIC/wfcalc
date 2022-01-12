@@ -82,7 +82,7 @@
       <button class="meleeType" style="display:none" onclick="loadWeaponNames(this)">Sword and Shields</button>
       <button class="meleeType" style="display:none" onclick="loadWeaponNames(this)">Tonfas</button>
       <button class="meleeType" style="display:none" onclick="loadWeaponNames(this)">Warfans</button>
-      <button class="meleeType" style="display:none" onclick="loadWeaponNames(this)">>Whips</button>
+      <button class="meleeType" style="display:none" onclick="loadWeaponNames(this)">Whips</button>
     </div>
   </div>
 
@@ -160,15 +160,27 @@
 </div>
 
 <div id="normal_mods" class="tabcontent">
-  <h3>Normal mods</h3>
+  <div class="mod-source" id="normal-mod-source">
+    <img id="vital_sense" src="mods/VitalSense.png" draggable="true" ondragstart="drag(event)" onclick="modActions(this)" width="125" height="185">
+    <img id="critical_delay" src="mods/CriticalDelay.png" draggable="true" ondragstart="drag(event)" onclick="modActions(this)" width="125" height="185">
+    <img id="bladed_rounds" src="mods/BladedRounds.png" draggable="true" ondragstart="drag(event)" onclick="modActions(this)" width="125" height="185">
+    <img id="internal_bleeding" src="mods/InternalBleeding.png" draggable="true" ondragstart="drag(event)" onclick="modActions(this)" width="125" height="185">
+    <img id="vile_acceleration" src="mods/VileAcceleration.png" draggable="true" ondragstart="drag(event)" onclick="modActions(this)" width="134" height="187">
+    <img id="primed_bane_of_grineer" src="mods/PrimedBaneOfGrineer.png" draggable="true" ondragstart="drag(event)"onclick="modActions(this)"  width="125" height="185">
+  </div>
 </div>
 
 <div id="primed_mods" class="tabcontent">
-  <h3>Primed Mods</h3>
+  <div class="mod-source" id="primed-mod-source">
+    <img id="primed_cryo_rounds" src="mods/PrimedCryoRounds.png" draggable="true" ondragstart="drag(event)" onclick="modActions(this)" width="125" height="185">
+  </div>
 </div>
 
 <div id="galvanized_mods" class="tabcontent">
-  <h3>Galvanized Mods</h3>
+  <div class="mod-source" id="galvanzied-mod-source">
+    <img id="galvanized_chamber" src="mods/GalvanizedChamber.png" draggable="true" ondragstart="drag(event)" onclick="modActions(this)" width="145" height="188">
+    <img id="galvanized_aptitude" src="mods/GalvanizedAptitude.png" draggable="true" ondragstart="drag(event)" onclick="modActions(this)" width="145" height="188">
+  </div>
 </div>
 
 

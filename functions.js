@@ -13,6 +13,8 @@ function loadWeaponTypes(weaponSlot){
 
   changeButtonName("typeBTN", "Select Type");
 
+  changeButtonName("nameBTN", "Select Weapon");
+
   if(weaponSlot == 'primary'){
 
     if(primary == 0){
