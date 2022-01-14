@@ -247,8 +247,6 @@ function modActions(mod){
 
       if(document.getElementById(modSlot).childNodes.length == 0){
         document.getElementById(modSlot).appendChild(mod);
-        document.getElementById('test').innerHTML = modSlot;
-
         break;
       }
     }
