@@ -180,14 +180,9 @@ function drop(ev, modSlotID) {
 
   /*
     if(modSlot.childNodes.length > 0){
-
-
       var modID = modSlot.childNodes[0].id;
       document.getElementById("mod-source").appendChild(document.getElementById(modID));
-
-
       ev.preventDefault();
-
       switch(modSlotID) {
         case "mod1":
           document.getElementById("mod-source").appendChild(document.getElementById(mod1));
@@ -215,7 +210,6 @@ function drop(ev, modSlotID) {
           document.getElementById("mod-source").appendChild(document.getElementById(mod8));
           break;
       }
-
     }
   */
 

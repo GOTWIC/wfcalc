@@ -101,9 +101,10 @@
   <tr>
     <th>
       <div class="tab">
-        <button class="tablinks" onclick="openModTab(event, 'normal_mods')">Normal mods</button>
-        <button class="tablinks" onclick="openModTab(event, 'primed_mods')">Primed Mods</button>
-        <button class="tablinks" onclick="openModTab(event, 'galvanized_mods')">Galvanized Mods</button>
+        <button class="tablinks" onclick="openModTab(event, 'normal_mods')">Normal</button>
+        <button class="tablinks" onclick="openModTab(event, 'primed_mods')">Primed</button>
+        <button class="tablinks" onclick="openModTab(event, 'galvanized_mods')">Galvanized</button>
+        <button class="tablinks" onclick="openModTab(event, 'arcanes')">Arcanes</button>
       </div>
 
       <div id="normal_mods" class="tabcontent" style="display: block !important;">
@@ -111,8 +112,18 @@
           <img id="vital_sense" src="mods/VitalSense.png" draggable="true" ondragstart="drag(event)" onclick="modActions(this)" width="125" height="185">
           <img id="critical_delay" src="mods/CriticalDelay.png" draggable="true" ondragstart="drag(event)" onclick="modActions(this)" width="125" height="185">
           <img id="bladed_rounds" src="mods/BladedRounds.png" draggable="true" ondragstart="drag(event)" onclick="modActions(this)" width="125" height="185">
+          <img id="heavy_caliber" src="mods/HeavyCaliber.png" draggable="true" ondragstart="drag(event)" onclick="modActions(this)" width="125" height="185">
+          <img id="serration" src="mods/Serration.png" draggable="true" ondragstart="drag(event)" onclick="modActions(this)" width="125" height="185">
+          <img id="split_chamber" src="mods/SplitChamber.png" draggable="true" ondragstart="drag(event)" onclick="modActions(this)" width="125" height="185">
+          <img id="stormbringer" src="mods/Stormbringer.png" draggable="true" ondragstart="drag(event)" onclick="modActions(this)" width="125" height="185">
           <img id="internal_bleeding" src="mods/InternalBleeding.png" draggable="true" ondragstart="drag(event)" onclick="modActions(this)" width="125" height="185">
           <img id="vile_acceleration" src="mods/VileAcceleration.png" draggable="true" ondragstart="drag(event)" onclick="modActions(this)" width="134" height="187">
+          <img id="hellfire" src="mods/Hellfire.png" draggable="true" ondragstart="drag(event)" onclick="modActions(this)" width="125" height="185">
+          <img id="infected_clip" src="mods/InfectedClip.png" draggable="true" ondragstart="drag(event)" onclick="modActions(this)" width="134" height="187">
+          <img id="" src="mods/.png" draggable="true" ondragstart="drag(event)" onclick="modActions(this)" width="125" height="185">
+          <img id="" src="mods/.png" draggable="true" ondragstart="drag(event)" onclick="modActions(this)" width="125" height="185">
+          <img id="" src="mods/.png" draggable="true" ondragstart="drag(event)" onclick="modActions(this)" width="125" height="185">
+
         </div>
       </div>
 
@@ -120,6 +131,14 @@
         <div class="mod-source" id="primed-mod-source">
           <img id="primed_cryo_rounds" src="mods/PrimedCryoRounds.png" draggable="true" ondragstart="drag(event)" onclick="modActions(this)" width="125" height="185">
           <img id="primed_bane_of_grineer" src="mods/PrimedBaneOfGrineer.png" draggable="true" ondragstart="drag(event)"onclick="modActions(this)"  width="125" height="185">
+          <img id="primed_bane_of_corpus" src="mods/PrimedBaneOfCorpus.png" draggable="true" ondragstart="drag(event)" onclick="modActions(this)" width="125" height="185">
+          <img id="primed_bane_of_infested" src="mods/PrimedBaneOfInfested.png" draggable="true" ondragstart="drag(event)"onclick="modActions(this)"  width="125" height="185">
+          <img id="primed_bane_of_corrupted" src="mods/PrimedBaneOfCorrupted.png" draggable="true" ondragstart="drag(event)" onclick="modActions(this)" width="125" height="185">
+          <img id="primed_shred" src="mods/PrimedShred.png" draggable="true" ondragstart="drag(event)"onclick="modActions(this)"  width="125" height="185">
+          <img id="primed_fast_hands" src="mods/PrimedFastHands.png" draggable="true" ondragstart="drag(event)" onclick="modActions(this)" width="125" height="185">
+          <img id="primed_firestorm" src="mods/PrimedFirestorm.png" draggable="true" ondragstart="drag(event)"onclick="modActions(this)"  width="125" height="185">
+          <img id="primed_magazine_warp" src="mods/PrimedMagazineWarp.png" draggable="true" ondragstart="drag(event)"onclick="modActions(this)"  width="125" height="185">
+          <img id="primed_rifle_ammo_mutation" src="mods/PrimedRifleAmmoMutation.png" draggable="true" ondragstart="drag(event)"onclick="modActions(this)"  width="125" height="185">
         </div>
       </div>
 
@@ -127,6 +146,12 @@
         <div class="mod-source" id="galvanzied-mod-source">
           <img id="galvanized_chamber" src="mods/GalvanizedChamber.png" draggable="true" ondragstart="drag(event)" onclick="modActions(this)" width="145" height="188">
           <img id="galvanized_aptitude" src="mods/GalvanizedAptitude.png" draggable="true" ondragstart="drag(event)" onclick="modActions(this)" width="145" height="188">
+          <img id="galvanized_scope" src="mods/GalvanizedScope.png" draggable="true" ondragstart="drag(event)" onclick="modActions(this)" width="145" height="188">
+        </div>
+      </div>
+
+      <div id="arcanes" class="tabcontent">
+        <div class="mod-source" id="arcane-source">
         </div>
       </div>
     </th>
@@ -172,6 +197,8 @@
 
 
 <h1 id="test">Use me as a makeshift console</h1>
+
+<img class="arcane" id="" src="mods/ArcaneIconCyan.png" width="80" height="52">
 
 
 <div class="spacer"><div>
