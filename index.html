@@ -163,22 +163,38 @@
           <th><button class="removeBTN"onclick="removeMods()">Remove Mods</button></th>
         </tr>
         <tr>
-          <th><div id="mod1" class="mod-slot" ondrop="drop(event, 'mod1')" ondragover="allowDrop(event)"></div></th>
-          <th><div id="mod2" class="mod-slot" ondrop="drop(event, 'mod2')" ondragover="allowDrop(event)"></div></th>
-          <th><div id="mod3" class="mod-slot" ondrop="drop(event, 'mod3')" ondragover="allowDrop(event)"></div></th>
-          <th><div id="mod4" class="mod-slot" ondrop="drop(event, 'mod4')" ondragover="allowDrop(event)"></div></th>
+          <th><div id="mod1" class="mod-slot" ondrop="drop(event, this)" ondragover="allowDrop(event)"></div></th>
+          <th><div id="mod2" class="mod-slot" ondrop="drop(event, this)" ondragover="allowDrop(event)"></div></th>
+          <th><div id="mod3" class="mod-slot" ondrop="drop(event, this)" ondragover="allowDrop(event)"></div></th>
+          <th><div id="mod4" class="mod-slot" ondrop="drop(event, this)" ondragover="allowDrop(event)"></div></th>
         </tr>
         <tr>
-          <th><div id="mod5" class="mod-slot" ondrop="drop(event, 'mod5')" ondragover="allowDrop(event)"></div></th>
-          <th><div id="mod6" class="mod-slot" ondrop="drop(event, 'mod6')" ondragover="allowDrop(event)"></div></th>
-          <th><div id="mod7" class="mod-slot" ondrop="drop(event, 'mod7')" ondragover="allowDrop(event)"></div></th>
-          <th><div id="mod8" class="mod-slot" ondrop="drop(event, 'mod8')" ondragover="allowDrop(event)"></div></th>
+          <th><div id="mod5" class="mod-slot" ondrop="drop(event, this)" ondragover="allowDrop(event)"></div></th>
+          <th><div id="mod6" class="mod-slot" ondrop="drop(event, this)" ondragover="allowDrop(event)"></div></th>
+          <th><div id="mod7" class="mod-slot" ondrop="drop(event, this)" ondragover="allowDrop(event)"></div></th>
+          <th><div id="mod8" class="mod-slot" ondrop="drop(event, this)" ondragover="allowDrop(event)"></div></th>
         </tr>
       </table>
     </th>
   </tr>
 </table>
 
+
+<div class="stats">
+  <h3>Total Damage: <span id="total_damage">58</span></h3>
+  <h5>Impact Damage: <span id="impact_damage">8</span></h5>
+  <h5>Puncture Damage: <span id="puncture_damage">22</span></h5>
+  <h5>Slash Damage: <span id="slash_damage"></span>12</h5>
+  <h3>Multishot: <span id="multishot"></span>1</h3>
+  <h3>Critical Chance: <span id="critical_chance">12</span></h3>
+  <h3>Critical Damage: <span id="critical_damage">1.6</span></h3>
+  <h3>Fire Rate: <span id="fire_rate"></span></h3>
+  <h3>Status Chance: <span id="status_chance">38%</span></h3>
+
+</div>
+
+
+<h1 class="test" id="TEST1">Use me as a testing console</h1>
 
 <div class="spacer"><div>
 

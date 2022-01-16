@@ -1,9 +1,11 @@
 var primary, secondary, melee;
 var rifle;
-var mod1, mod2, mod3, mod4, mod5, mod6, mod7, mod8;
+var mod1 = "", mod2 = "", mod3 = "", mod4 = "", mod5 = "", mod6 = "", mod7 = "", mod8 = "";
 
 const slots = ["primary", "secondary", "melee"];
 
+//Use the following line after an update to get information on what mods are equiped
+//document.getElementById('TEST1').innerHTML = mod1 + (" ") + mod2 + (" ") + mod3 + (" ") + mod4 + (" ") + mod5 + (" ") + mod6 + (" ") + mod7 + (" ") + mod8 + (" ");
 
 window.addEventListener('contextmenu', function (e) {
   e.preventDefault();
@@ -90,7 +92,6 @@ function loadWeaponStats(weapon){
   changeButtonName("nameBTN", toTitleCase(weapon.replace(/_/g, " ")));
 }
 
-
 function singleActive(array, activeItem){
   temp = array.filter(e => e !== activeItem);
   for (const nonActiveItem of temp) {
@@ -127,95 +128,90 @@ function resetTypeDropdownContents(){
   }
 }
 
-
-
-
-
 function drag(ev) {
   ev.dataTransfer.setData("text", ev.target.id);
 }
-
 
 function allowDrop(ev) {
   ev.preventDefault();
 }
 
-function drop(ev, modSlotID) {
-  var modSlot = document.getElementById(modSlotID);
-
-  var data = ev.dataTransfer.getData("text");
-
+function drop(ev, modSlot) {
   if(modSlot.childNodes.length == 0){
     var data = ev.dataTransfer.getData("text");
     ev.target.appendChild(document.getElementById(data));
 
-    switch(modSlotID) {
-      case "mod1":
-        mod1 = document.getElementById(data).id;
-        break;
-      case "mod2":
-        mod2 = document.getElementById(data).id;
-        break;
-      case "mod3":
-        mod3 = document.getElementById(data).id;
-        break;
-      case "mod4":
-        mod4 = document.getElementById(data).id;
-        break;
-      case "mod5":
-        mod5 = document.getElementById(data).id;
-        break;
-      case "mod6":
-        mod6 = document.getElementById(data).id;
-        break;
-      case "mod7":
-        mod7 = document.getElementById(data).id;
-        break;
-      case "mod8":
-        mod8 = document.getElementById(data).id;
-        break;
-    }
+    setModData(modSlot.id, data);
   }
-
-
-  /*
-    if(modSlot.childNodes.length > 0){
-      var modID = modSlot.childNodes[0].id;
-      document.getElementById("mod-source").appendChild(document.getElementById(modID));
-      ev.preventDefault();
-      switch(modSlotID) {
-        case "mod1":
-          document.getElementById("mod-source").appendChild(document.getElementById(mod1));
-          insertMod(ev);
-          break;
-        case "mod2":
-          document.getElementById("mod-source").appendChild(document.getElementById(mod2));
-          break;
-        case "mod3":
-          document.getElementById("mod-source").appendChild(document.getElementById(mod3));
-          break;
-        case "mod4":
-          document.getElementById("mod-source").appendChild(document.getElementById(mod4));
-          break;
-        case "mod5":
-          document.getElementById("mod-source").appendChild(document.getElementById(mod5));
-          break;
-        case "mod6":
-          document.getElementById("mod-source").appendChild(document.getElementById(mod6));
-          break;
-        case "mod7":
-          document.getElementById("mod-source").appendChild(document.getElementById(mod7));
-          break;
-        case "mod8":
-          document.getElementById("mod-source").appendChild(document.getElementById(mod8));
-          break;
-      }
-    }
-  */
-
 }
 
+function setModData(modSlotID, modID) {
 
+  cleanModData(modID);
+
+  switch(modSlotID) {
+    case "mod1":
+      mod1 = modID;
+      break;
+    case "mod2":
+      mod2 = modID;
+      break;
+    case "mod3":
+      mod3 = modID;
+      break;
+    case "mod4":
+      mod4 = modID;
+      break;
+    case "mod5":
+      mod5 = modID;
+      break;
+    case "mod6":
+      mod6 = modID;
+      break;
+    case "mod7":
+      mod7 = modID;
+      break;
+    case "mod8":
+      mod8 = modID;
+      break;
+  }
+}
+
+function cleanModData(modID){
+
+  if(mod1 == modID){
+    mod1 = "";
+  }
+
+  else if(mod2 == modID){
+    mod2 = "";
+  }
+
+  else if(mod3 == modID){
+    mod3 = "";
+  }
+
+  else if(mod4 == modID){
+    mod4 = "";
+  }
+
+  else if(mod5 == modID){
+    mod5 = "";
+  }
+
+  else if(mod6 == modID){
+    mod6 = "";
+  }
+
+  else if(mod7 == modID){
+    mod7 = "";
+  }
+
+  else if(mod8 == modID){
+    mod8 = "";
+  }
+
+}
 
 function removeMods(){
   for(let i = 1; i < 9; i++) {
@@ -239,14 +235,14 @@ function removeMods(){
   }
 }
 
-
 function modActions(mod){
   if(mod.parentElement.id == "normal-mod-source" || mod.parentElement.id == "primed-mod-source" || mod.parentElement.id == "galvanzied-mod-source"){
     for(let i = 1; i < 9; i++) {
-      var modSlot = 'mod' + i.toString();
+      var modSlotID = 'mod' + i.toString();
 
-      if(document.getElementById(modSlot).childNodes.length == 0){
-        document.getElementById(modSlot).appendChild(mod);
+      if(document.getElementById(modSlotID).childNodes.length == 0){
+        document.getElementById(modSlotID).appendChild(mod);
+        setModData(modSlotID, mod.id);
         break;
       }
     }
@@ -265,10 +261,10 @@ function modActions(mod){
       document.getElementById("normal-mod-source").appendChild(mod);
     }
 
+    cleanModData(mod.id);
+
   }
 }
-
-
 
 function openModTab(evt, cityName) {
   var i, tabcontent, tablinks;

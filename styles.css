@@ -89,6 +89,7 @@
 .modding-area {
   margin-left: auto;
   margin-right: auto;
+  margin-top: 50px;
 }
 
 
@@ -148,6 +149,15 @@
 
 .tabcontent {
   display: none;
+}
+
+
+.stats {
+  color: #ffffff;
+}
+
+.test {
+  color: #ffffff;
 }
 
 
