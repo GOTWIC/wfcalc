@@ -218,7 +218,6 @@ function removeMods(){
     var mod = 'mod' + i.toString();
     if(document.getElementById(mod).childNodes.length > 0){
       var modID = document.getElementById(mod).childNodes[0].id;
-      //document.getElementById("mod-source").appendChild(document.getElementById(modID));
 
       if(modID.includes("prime")){
         document.getElementById("primed-mod-source").appendChild(document.getElementById(modID));
@@ -231,6 +230,8 @@ function removeMods(){
       else{
         document.getElementById("normal-mod-source").appendChild(document.getElementById(modID));
       }
+
+      mod1 = ""; mod2 = ""; mod3 = ""; mod4 = ""; mod5 = ""; mod6 = ""; mod7 = ""; mod8 = "";
     }
   }
 }
