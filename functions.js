@@ -1,8 +1,185 @@
 var primary, secondary, melee;
 var rifle;
 var mod1 = "", mod2 = "", mod3 = "", mod4 = "", mod5 = "", mod6 = "", mod7 = "", mod8 = "";
+var fr = 6, ms = 1, cd = 1.6, dmg = 58;
+var split_chamber = false, vital_sense = false, vile_acceleration = false;
 
 const slots = ["primary", "secondary", "melee"];
+
+var mod_dict = {
+  "bladed_rounds": {
+    "type": "rifle",
+    "subtype": "normal",
+    "img": "mods/BladedRounds.png",
+    "slotted": 0,
+  },
+  "critical_delay": {
+    "type": "rifle",
+    "subtype": "normal",
+    "img": "mods/CriticalDelay.png",
+    "slotted": 0,
+  },
+  "heavy_caliber": {
+    "type": "rifle",
+    "subtype": "normal",
+    "img": "mods/HeavyCaliber.png",
+    "slotted": 0,
+  },
+  "hellfire": {
+    "type": "rifle",
+    "subtype": "normal",
+    "img": "mods/Hellfire.png",
+    "slotted": 0,
+  },
+  "infected_clip": {
+    "type": "rifle",
+    "subtype": "normal",
+    "img": "mods/InfectedClip.png",
+    "slotted": 0,
+  },
+  "internal_bleeding": {
+    "type": "rifle",
+    "subtype": "normal",
+    "img": "mods/InternalBleeding.png",
+    "slotted": 0,
+  },
+  "serration": {
+    "type": "rifle",
+    "subtype": "normal",
+    "img": "mods/Serration.png",
+    "slotted": 0,
+  },
+  "split_chamber": {
+    "type": "rifle",
+    "subtype": "normal",
+    "img": "mods/SplitChamber.png",
+    "slotted": 0,
+  },
+  "stormbringer": {
+    "type": "rifle",
+    "subtype": "normal",
+    "img": "mods/Stormbringer.png",
+    "slotted": 0,
+  },
+  "vile_acceleration": {
+    "type": "rifle",
+    "subtype": "normal",
+    "img": "mods/VileAcceleration.png",
+    "slotted": 0,
+  },
+  "vital_sense": {
+    "type": "rifle",
+    "subtype": "normal",
+    "img": "mods/VitalSense.png",
+    "slotted": 0,
+  },
+  "galvanized_aptitude": {
+    "type": "rifle",
+    "subtype": "galvanized",
+    "img": "mods/GalvanizedAptitude.png",
+    "slotted": 0,
+  },
+  "galvanized_chamber": {
+    "type": "rifle",
+    "subtype": "galvanized",
+    "img": "mods/GalvanizedChamber.png",
+    "slotted": 0,
+  },
+  "galvanized_scope": {
+    "type": "rifle",
+    "subtype": "galvanized",
+    "img": "mods/GalvanizedScope.png",
+    "slotted": 0,
+  },
+
+  "primed_bane_of_corpus": {
+    "type": "rifle",
+    "subtype": "primed",
+    "img": "mods/PrimedBaneOfCorpus.png",
+    "slotted": 0,
+  },
+  "primed_bane_of_corrupted": {
+    "type": "rifle",
+    "subtype": "primed",
+    "img": "mods/PrimedBaneOfCorrupted.png",
+    "slotted": 0,
+  },
+  "primed_bane_of_grineer": {
+    "type": "rifle",
+    "subtype": "primed",
+    "img": "mods/PrimedBaneOfGrineer.png",
+    "slotted": 0,
+  },
+  "primed_bane_of_infested": {
+    "type": "rifle",
+    "subtype": "primed",
+    "img": "mods/PrimedBaneOfInfested.png",
+    "slotted": 0,
+  },
+  "primed_cryo_rounds": {
+    "type": "rifle",
+    "subtype": "primed",
+    "img": "mods/PrimedCryoRounds.png",
+    "slotted": 0,
+  },
+  "primed_fast_hands": {
+    "type": "rifle",
+    "subtype": "primed",
+    "img": "mods/PrimedFastHands.png",
+    "slotted": 0,
+  },
+  "primed_firestorm": {
+    "type": "rifle",
+    "subtype": "primed",
+    "img": "mods/PrimedFirestorm.png",
+    "slotted": 0,
+  },
+  "primed_magazine_warp": {
+    "type": "rifle",
+    "subtype": "primed",
+    "img": "mods/PrimedMagazineWarp.png",
+    "slotted": 0,
+  },
+  "primed_rifle_ammo_mutation": {
+    "type": "rifle",
+    "subtype": "primed",
+    "img": "mods/PrimedRifleAmmoMutation.png",
+    "slotted": 0,
+  },
+  "primed_shred": {
+    "type": "rifle",
+    "subtype": "primed",
+    "img": "mods/PrimedShred.png",
+    "slotted": 0,
+  },
+
+}
+
+
+function generateMods(){
+  for (var key in mod_dict) {
+    generateMod(key);
+  }
+}
+
+function generateMod(modName){
+  var new_mod = document.getElementById("master_mod").cloneNode(true);
+  new_mod.setAttribute("src", mod_dict[modName]["img"]);
+  new_mod.setAttribute("id", modName);
+  if(mod_dict[modName]["subtype"] == "normal"){
+    document.getElementById("normal_mod_source").appendChild(new_mod);
+  }
+  else if(mod_dict[modName]["subtype"] == "primed"){
+    document.getElementById("primed_mod_source").appendChild(new_mod);
+  }
+  else if(mod_dict[modName]["subtype"] == "galvanized"){
+    new_mod.setAttribute("width", 145);
+    new_mod.setAttribute("height", 188);
+    document.getElementById("galvanzied_mod_source").appendChild(new_mod);
+  }
+
+}
+
 
 //Use the following line after an update to get information on what mods are equiped
 //document.getElementById('TEST1').innerHTML = mod1 + (" ") + mod2 + (" ") + mod3 + (" ") + mod4 + (" ") + mod5 + (" ") + mod6 + (" ") + mod7 + (" ") + mod8 + (" ");
@@ -175,6 +352,10 @@ function setModData(modSlotID, modID) {
       mod8 = modID;
       break;
   }
+
+
+  changeSingleStatVar(modID);
+
 }
 
 function cleanModData(modID){
@@ -237,7 +418,7 @@ function removeMods(){
 }
 
 function modActions(mod){
-  if(mod.parentElement.id == "normal-mod-source" || mod.parentElement.id == "primed-mod-source" || mod.parentElement.id == "galvanzied-mod-source"){
+  if(mod.parentElement.id == "normal_mod_source" || mod.parentElement.id == "primed_mod_source" || mod.parentElement.id == "galvanzied_mod_source"){
     for(let i = 1; i < 9; i++) {
       var modSlotID = 'mod' + i.toString();
 
@@ -249,21 +430,22 @@ function modActions(mod){
     }
   }
 
-  else if(mod.parentElement.id != "normal-mod-source" || mod.parentElement.id != "primed-mod-source" || mod.parentElement.id != "galvanzied-mod-source"){
-    if(mod.id.includes("prime")){
-      document.getElementById("primed-mod-source").appendChild(mod);
+  else if(mod.parentElement.id != "normal_mod_source" || mod.parentElement.id != "primed_mod_source" || mod.parentElement.id != "galvanzied_mod_source"){
+    if(mod_dict[mod.id]["subtype"] == "normal"){
+      document.getElementById("normal_mod_source").appendChild(mod);
     }
 
-    else if(mod.id.includes("galvanized")){
-      document.getElementById("galvanzied-mod-source").appendChild(mod);
+    else if(mod_dict[mod.id]["subtype"] == "primed"){
+      document.getElementById("primed_mod_source").appendChild(mod);
     }
 
-    else{
-      document.getElementById("normal-mod-source").appendChild(mod);
+    else if(mod_dict[mod.id]["subtype"] == "galvanized"){
+      document.getElementById("galvanzied_mod_source").appendChild(mod);
     }
+
+    changeSingleStatVar(mod.id);
 
     cleanModData(mod.id);
-
   }
 }
 
@@ -279,4 +461,17 @@ function openModTab(evt, cityName) {
   }
   document.getElementById(cityName).style.display = "block";
   evt.currentTarget.className += " active";
+}
+
+function changeSingleStatVar(modID){
+  //eval(eval("modID") + " = " + !eval(eval("modID")));
+  mod_dict[modID]["slotted"] = !(mod_dict[modID]["slotted"]);
+  updateStats();
+}
+
+function updateStats(){
+  document.getElementById("multishot").innerHTML = (ms * (1.0 + 0.9 * mod_dict["split_chamber"]["slotted"])).toFixed(2);
+  document.getElementById("fire_rate").innerHTML = (fr * (1.0 + 0.9 * mod_dict["vile_acceleration"]["slotted"])).toFixed(2);
+  document.getElementById("total_damage").innerHTML = (dmg * (1.0 + -.15 * mod_dict["vile_acceleration"]["slotted"])).toFixed(2);
+  document.getElementById("critical_damage").innerHTML = (cd * (1.0 + 1.2 * mod_dict["vital_sense"]["slotted"])).toFixed(2);
 }
