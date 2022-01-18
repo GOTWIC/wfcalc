@@ -1,8 +1,9 @@
 var primary, secondary, melee;
 var rifle;
-var mod1 = "", mod2 = "", mod3 = "", mod4 = "", mod5 = "", mod6 = "", mod7 = "", mod8 = "";
 var fr = 6, ms = 1, cd = 1.6, dmg = 58;
-var split_chamber = false, vital_sense = false, vile_acceleration = false;
+
+var modSlotData = ["-", "-", "-", "-", "-", "-", "-", "-"];
+
 
 const slots = ["primary", "secondary", "melee"];
 
@@ -175,14 +176,10 @@ function generateMod(modName){
   else if(mod_dict[modName]["subtype"] == "galvanized"){
     new_mod.setAttribute("width", 145);
     new_mod.setAttribute("height", 188);
-    document.getElementById("galvanzied_mod_source").appendChild(new_mod);
+    document.getElementById("galvanized_mod_source").appendChild(new_mod);
   }
 
 }
-
-
-//Use the following line after an update to get information on what mods are equiped
-//document.getElementById('TEST1').innerHTML = mod1 + (" ") + mod2 + (" ") + mod3 + (" ") + mod4 + (" ") + mod5 + (" ") + mod6 + (" ") + mod7 + (" ") + mod8 + (" ");
 
 window.addEventListener('contextmenu', function (e) {
   e.preventDefault();
@@ -269,13 +266,6 @@ function loadWeaponStats(weapon){
   changeButtonName("nameBTN", toTitleCase(weapon.replace(/_/g, " ")));
 }
 
-function singleActive(array, activeItem){
-  temp = array.filter(e => e !== activeItem);
-  for (const nonActiveItem of temp) {
-    document.getElementById(nonActiveItem).style.display="none";
-  }
-}
-
 function changeButtonName(buttonID, name){
   document.getElementById(buttonID).innerHTML = name;
 }
@@ -314,85 +304,34 @@ function allowDrop(ev) {
 }
 
 function drop(ev, modSlot) {
+
+  var data = ev.dataTransfer.getData("text");
+  var oldParentID = document.getElementById(data).parentElement.id;
+  var newParentID = modSlot.id;
   if(modSlot.childNodes.length == 0){
-    var data = ev.dataTransfer.getData("text");
     ev.target.appendChild(document.getElementById(data));
 
-    setModData(modSlot.id, data);
+    checkToUpdateStat(oldParentID, newParentID, data);
   }
 }
 
-function setModData(modSlotID, modID) {
+function checkToUpdateStat(oldParentID, newParentID, modID) {
 
-  cleanModData(modID);
 
-  switch(modSlotID) {
-    case "mod1":
-      mod1 = modID;
-      break;
-    case "mod2":
-      mod2 = modID;
-      break;
-    case "mod3":
-      mod3 = modID;
-      break;
-    case "mod4":
-      mod4 = modID;
-      break;
-    case "mod5":
-      mod5 = modID;
-      break;
-    case "mod6":
-      mod6 = modID;
-      break;
-    case "mod7":
-      mod7 = modID;
-      break;
-    case "mod8":
-      mod8 = modID;
-      break;
+  if(document.getElementById(oldParentID).className == "mod-slot") {
+    var i = oldParentID.replace("mod", "");
+    modSlotData[i - 1] = "-";
+  }
+
+  else{
+    changeSingleStatVar(modID);
   }
 
 
-  changeSingleStatVar(modID);
-
+  var j = newParentID.replace("mod", "");
+  modSlotData[j - 1] = modID;
 }
 
-function cleanModData(modID){
-
-  if(mod1 == modID){
-    mod1 = "";
-  }
-
-  else if(mod2 == modID){
-    mod2 = "";
-  }
-
-  else if(mod3 == modID){
-    mod3 = "";
-  }
-
-  else if(mod4 == modID){
-    mod4 = "";
-  }
-
-  else if(mod5 == modID){
-    mod5 = "";
-  }
-
-  else if(mod6 == modID){
-    mod6 = "";
-  }
-
-  else if(mod7 == modID){
-    mod7 = "";
-  }
-
-  else if(mod8 == modID){
-    mod8 = "";
-  }
-
-}
 
 function removeMods(){
   for(let i = 1; i < 9; i++) {
@@ -400,37 +339,34 @@ function removeMods(){
     if(document.getElementById(mod).childNodes.length > 0){
       var modID = document.getElementById(mod).childNodes[0].id;
 
-      if(modID.includes("prime")){
-        document.getElementById("primed-mod-source").appendChild(document.getElementById(modID));
-      }
+      document.getElementById(mod_dict[modID]["subtype"] + "_mod_source").appendChild(document.getElementById(modID));
 
-      else if(modID.includes("galvanized")){
-        document.getElementById("galvanzied-mod-source").appendChild(document.getElementById(modID));
-      }
+      modSlotData.forEach((modData, i) => {
+        modSlotData[i] = "-";
+      });
 
-      else{
-        document.getElementById("normal-mod-source").appendChild(document.getElementById(modID));
-      }
-
-      mod1 = ""; mod2 = ""; mod3 = ""; mod4 = ""; mod5 = ""; mod6 = ""; mod7 = ""; mod8 = "";
+      changeSingleStatVar(modID);
     }
   }
 }
 
 function modActions(mod){
-  if(mod.parentElement.id == "normal_mod_source" || mod.parentElement.id == "primed_mod_source" || mod.parentElement.id == "galvanzied_mod_source"){
+  if(mod.parentElement.id == "normal_mod_source" || mod.parentElement.id == "primed_mod_source" || mod.parentElement.id == "galvanized_mod_source"){
     for(let i = 1; i < 9; i++) {
       var modSlotID = 'mod' + i.toString();
 
       if(document.getElementById(modSlotID).childNodes.length == 0){
+        checkToUpdateStat(mod.parentElement.id, modSlotID, mod.id);
         document.getElementById(modSlotID).appendChild(mod);
-        setModData(modSlotID, mod.id);
         break;
       }
     }
   }
 
-  else if(mod.parentElement.id != "normal_mod_source" || mod.parentElement.id != "primed_mod_source" || mod.parentElement.id != "galvanzied_mod_source"){
+  else if(mod.parentElement.id != "normal_mod_source" || mod.parentElement.id != "primed_mod_source" || mod.parentElement.id != "galvanized_mod_source"){
+
+    modSlotData[mod.parentElement.id.replace("mod", "") - 1] = "-";
+
     if(mod_dict[mod.id]["subtype"] == "normal"){
       document.getElementById("normal_mod_source").appendChild(mod);
     }
@@ -440,12 +376,10 @@ function modActions(mod){
     }
 
     else if(mod_dict[mod.id]["subtype"] == "galvanized"){
-      document.getElementById("galvanzied_mod_source").appendChild(mod);
+      document.getElementById("galvanized_mod_source").appendChild(mod);
     }
 
     changeSingleStatVar(mod.id);
-
-    cleanModData(mod.id);
   }
 }
 
@@ -464,7 +398,6 @@ function openModTab(evt, cityName) {
 }
 
 function changeSingleStatVar(modID){
-  //eval(eval("modID") + " = " + !eval(eval("modID")));
   mod_dict[modID]["slotted"] = !(mod_dict[modID]["slotted"]);
   updateStats();
 }
