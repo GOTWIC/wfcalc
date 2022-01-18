@@ -185,6 +185,10 @@ window.addEventListener('contextmenu', function (e) {
   e.preventDefault();
 }, false);
 
+window.onload = function() {
+  generateMods();
+};
+
 function loadWeaponTypes(weaponSlot){
 
   changeButtonName("typeBTN", "Select Type");
