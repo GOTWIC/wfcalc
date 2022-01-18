@@ -1,6 +1,6 @@
 var primary, secondary, melee;
 var rifle;
-var fr = 6, ms = 1, cd = 1.6, dmg = 58;
+var fr = 6, ms = 1, cd = 1.6, dmg = 58, cc = 12, sc = 38, imp = 8, punc = 22, slash = 12, cold = 16, ips = 0;
 
 var modSlotData = ["-", "-", "-", "-", "-", "-", "-", "-"];
 
@@ -160,6 +160,7 @@ var mod_dict = {
 function generateMods(){
   for (var key in mod_dict) {
     generateMod(key);
+    updateStats();
   }
 }
 
@@ -408,7 +409,24 @@ function changeSingleStatVar(modID){
 
 function updateStats(){
   document.getElementById("multishot").innerHTML = (ms * (1.0 + 0.9 * mod_dict["split_chamber"]["slotted"])).toFixed(2);
-  document.getElementById("fire_rate").innerHTML = (fr * (1.0 + 0.9 * mod_dict["vile_acceleration"]["slotted"])).toFixed(2);
-  document.getElementById("total_damage").innerHTML = (dmg * (1.0 + -.15 * mod_dict["vile_acceleration"]["slotted"])).toFixed(2);
-  document.getElementById("critical_damage").innerHTML = (cd * (1.0 + 1.2 * mod_dict["vital_sense"]["slotted"])).toFixed(2);
+  document.getElementById("fire_rate").innerHTML = (fr * (1.0 + 0.9 * mod_dict["vile_acceleration"]["slotted"] -0.2 * mod_dict["critical_delay"]["slotted"])).toFixed(2);
+  document.getElementById("critical_damage").innerHTML = (cd * (1.0 + 1.2 * mod_dict["vital_sense"]["slotted"] + 1.2 * mod_dict["bladed_rounds"]["slotted"])).toFixed(2);
+  document.getElementById("critical_chance").innerHTML = (cc * (1.0 + 2.0 * mod_dict["critical_delay"]["slotted"])).toFixed(2);
+  document.getElementById("impact_damage").innerHTML = (imp * (1.0 + 1.65 * mod_dict["serration"]["slotted"] + 1.65 * mod_dict["heavy_caliber"]["slotted"] -0.15 * mod_dict["vile_acceleration"]["slotted"])).toFixed(2);
+  document.getElementById("puncture_damage").innerHTML = (punc * (1.0 + 1.65 * mod_dict["serration"]["slotted"] + 1.65 * mod_dict["heavy_caliber"]["slotted"] -0.15 * mod_dict["vile_acceleration"]["slotted"])).toFixed(2);
+  document.getElementById("slash_damage").innerHTML = (slash * (1.0 + 1.65 * mod_dict["serration"]["slotted"] + 1.65 * mod_dict["heavy_caliber"]["slotted"] -0.15 * mod_dict["vile_acceleration"]["slotted"])).toFixed(2);
+  ips = parseInt(document.getElementById("impact_damage").innerHTML) + parseInt(document.getElementById("puncture_damage").innerHTML) + parseInt(document.getElementById("slash_damage").innerHTML);
+  document.getElementById("cold_damage").innerHTML = (cold * (1.0 + 1.65 * mod_dict["serration"]["slotted"] + 1.65 * mod_dict["heavy_caliber"]["slotted"] -0.15 * mod_dict["vile_acceleration"]["slotted"]));
+  document.getElementById("total_damage").innerHTML = parseInt(ips) + parseInt(document.getElementById("cold_damage").innerHTML);
 }
+
+
+
+
+
+
+
+
+
+
+//spacer
